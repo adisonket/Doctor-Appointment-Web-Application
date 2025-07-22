@@ -85,6 +85,9 @@ const View_Appointmen = () => {
                     </div>
                 </div>
             </div>
+            <div className={style.copyright}>
+                 © {new Date().getFullYear()} Sanket Adhikary. All rights reserved.
+            </div>
         </div>
     );
 };
