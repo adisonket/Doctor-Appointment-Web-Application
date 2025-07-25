@@ -3,25 +3,25 @@ import style from "./View_Appointmen.module.css";
 const appointments = [
     {
         appointmentId: 1,
-        drName: "Dr. Priya Halder",
+        drName: "Dr. Priya Banerjee",
         drRole: "Consultant - Interventional Cardiologist",
         appointmentDate: "22/07/2025",
         appointmenTime: "11:00",
         paymentStatus: "Done",
-        meetLink: "https://meet.google.com/ebp-nbiz-jfh",
+        meetLink: "https://meet.google.com/vtr-tprp-dcc",
     },
     {
         appointmentId: 2,
-        drName: "Dr. Rimita Halder",
+        drName: "Dr. Rimita Ghosh",
         drRole: "Consultant - Orthopaedic (Hand & Wrist) Surgeon",
         appointmentDate: "22/07/2025",
         appointmenTime: "13:00",
         paymentStatus: "Done",
-        meetLink: "https://meet.google.com/wbg-ncix-jqh",
+        meetLink: "",
     },
     {
         appointmentId: 3,
-        drName: "Dr. Rimita Halder",
+        drName: "Dr. Ruhi Khan",
         drRole: "Consultant - Orthopaedic (Hand & Wrist) Surgeon",
         appointmentDate: "22/07/2025",
         appointmenTime: "13:00",
@@ -30,7 +30,7 @@ const appointments = [
     },
     {
         appointmentId: 4,
-        drName: "Dr. Rimita Halder",
+        drName: "Dr. Koyel Mallick",
         drRole: "Consultant - Orthopaedic (Hand & Wrist) Surgeon",
         appointmentDate: "22/07/2025",
         appointmenTime: "13:00",
@@ -39,7 +39,7 @@ const appointments = [
     },
     {
         appointmentId: 5,
-        drName: "Dr. Rimita Halder",
+        drName: "Dr. Agamani Banerjee",
         drRole: "Consultant - Orthopaedic (Hand & Wrist) Surgeon",
         appointmentDate: "22/07/2025",
         appointmenTime: "13:00",
@@ -69,7 +69,7 @@ const View_Appointmen = () => {
                                     <tr>
                                         <td><h5>{appt.drRole}</h5></td>
                                         <td><p><b>Time :</b> {appt.appointmenTime}</p></td>
-                                        <td><p><b>Meet Link : </b><a href={appt.meetLink} id={style.link}>Join Meeting</a></p></td>
+                                        <td><p><b>Meet Link : </b>{appt.meetLink ? (<a href={appt.meetLink} id={style.link} target="_blank" rel="noopener noreferrer">Join Meeting</a>) : (<span id={style.noLink}>Link not available</span>)}</p></td>
                                     </tr>
                                     <tr>
                                         <td colSpan="3">
@@ -86,7 +86,7 @@ const View_Appointmen = () => {
                 </div>
             </div>
             <div className={style.copyright}>
-                 © {new Date().getFullYear()} Sanket Adhikary. All rights reserved.
+                 © {new Date().getFullYear()} Created & crafted by <a id={style.profile} href="https://www.linkedin.com/in/sanket-adhikary-020888253">Sanket Adhikary</a>. All rights reserved.
             </div>
         </div>
     );

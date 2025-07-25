@@ -83,6 +83,9 @@ table{
     margin: 4px 2px;
     cursor: pointer;
 }
+#noLink{
+    color: rgba(0, 0, 0, 0.518);
+}
 .viewPdf:hover {
     background-color: #039861;
 }
@@ -96,4 +99,7 @@ table{
     position: absolute;
     top: 41rem;
     font-weight: 500;
+}
+#profile{
+    text-decoration: none;
 }
