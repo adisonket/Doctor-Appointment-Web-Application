@@ -86,7 +86,7 @@ const View_Appointmen = () => {
                 </div>
             </div>
             <div className={style.copyright}>
-                 © {new Date().getFullYear()} Created & crafted by <a id={style.profile} href="https://www.linkedin.com/in/sanket-adhikary-020888253">Sanket Adhikary</a>. All rights reserved.
+                 © {new Date().getFullYear()} Created & crafted by <a  href="https://www.linkedin.com/in/sanket-adhikary-020888253" target="_blank" rel="noopener noreferrer">Sanket Adhikary</a>. All rights reserved.
             </div>
         </div>
     );
