@@ -19,6 +19,7 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    text-align: center;
     background-color: white;
     border-bottom: 1px solid #ddd;
 }
@@ -34,12 +35,19 @@ body{
 }
 
 .header select:hover {
-    border-color: #04AA6D;
-    box-shadow: 0 0 5px rgba(4, 170, 109, 0.5);
+    border-color: #6BBF8A;
+    box-shadow: 0 0 5px #6BBF8A;
 }
 
 #header{
     margin-left: 300px;
+}
+.date{
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
 }
 .appointmentInfo{
     width: 90%;
@@ -54,7 +62,7 @@ body{
     width: 6px;
 }
 .appointmentInfo::-webkit-scrollbar-thumb {
-    background-color: #04AA6D;
+    background-color: #6BBF8A;
     border-radius: 10px;
 }
 .appointmentInfo::-webkit-scrollbar-track {
@@ -81,7 +89,7 @@ body{
     color: rgba(0, 0, 0, 0.518);
 }
 .viewDoc {
-    background-color: #04AA6D;
+    background-color: #4B9B6E;
     border: none;
     color: white;
     padding: 10px 25px;
@@ -95,7 +103,7 @@ body{
     font-weight: 500;
 }
 .viewDoc:hover {
-    background-color: #039861;
+    background-color: #2E7D5C;
 }
 .noAppointments {
     padding: 25px;

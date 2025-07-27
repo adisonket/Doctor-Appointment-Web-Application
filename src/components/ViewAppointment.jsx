@@ -4,7 +4,7 @@ import style from "./ViewAppointment.module.css";
 const appointments = [
   {
     appointmentId: 1,
-    appointmentDate: "27/07/2025",
+    appointmentDate: "28/07/2025",
     appointmentTime: "11:00",
     patientName: "Adhip Halder",
     gender: "Male",
@@ -13,7 +13,7 @@ const appointments = [
   },
   {
     appointmentId: 3,
-    appointmentDate: "27/07/2025",
+    appointmentDate: "28/07/2025",
     appointmentTime: "12:00",
     patientName: "Mriganka Adhikary",
     gender: "Male",
@@ -22,7 +22,7 @@ const appointments = [
   },
   {
     appointmentId: 4,
-    appointmentDate: "28/07/2025",
+    appointmentDate: "29/07/2025",
     appointmentTime: "12:00",
     patientName: "Tousif Mehmood",
     gender: "Male",
@@ -31,11 +31,11 @@ const appointments = [
   },
   {
     appointmentId: 5,
-    appointmentDate: "29/07/2025",
+    appointmentDate: "28/07/2025",
     appointmentTime: "13:00",
     patientName: "Adhip Halder",
     gender: "Male",
-    description: "Pain in some private area",
+    description: "Pain in private area",
     meetLink: "https://meet.google.com/vtr-tprp-dcc",
   },
   {
@@ -49,11 +49,11 @@ const appointments = [
   },
   {
     appointmentId: 7,
-    appointmentDate: "30/07/2025",
+    appointmentDate: "31/07/2025",
     appointmentTime: "13:00",
     patientName: "Adhip Halder",
     gender: "Male",
-    description: "Headache",
+    description: "",
     meetLink: "https://meet.google.com/vtr-tprp-dcc",
   },
 ];
@@ -82,16 +82,16 @@ const ViewAppointment = () => {
     <div className={style.container}>
       <div className={style.header}>
         <h1 id={style.header}>Appointments</h1>
-        <select
-          value={selectedDate}
-          onChange={(e) => setSelectedDate(e.target.value)}
-        >
-          {dateOptions.map((date) => (
-            <option key={date} value={date}>
-              {date}
-            </option>
-          ))}
-        </select>
+        <div className={style.date}>
+          <h2>Date : </h2>
+          <select value={selectedDate} onChange={(e) => setSelectedDate(e.target.value)}>
+            {dateOptions.map((date) => (
+              <option key={date} value={date}>
+                {date}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
       <div className={style.appointmentInfo}>
@@ -111,7 +111,7 @@ const ViewAppointment = () => {
                       <td><p><b>Gender : </b>{appt.gender}</p></td>
                     </tr>
                     <tr>
-                      <td><p><b>Description : </b>{appt.description}</p></td>
+                      <td><p><b>Description : </b>{appt.description || "NA"}</p></td>
                     </tr>
                     <tr>
                       <td><p><b>Meet Link : </b>{appt.meetLink ? (<a href={appt.meetLink} id={style.link} target="_blank" rel="noopener noreferrer">Join Meeting</a>) : (<span id={style.noLink}>Link not available</span>)}</p></td>
