@@ -4,56 +4,56 @@ import style from "./ViewAppointment.module.css";
 const appointments = [
   {
     appointmentId: 1,
-    appointmentDate: "28/07/2025",
+    appointmentDate: "12/08/2025",
     appointmentTime: "11:00",
     patientName: "Adhip Halder",
     gender: "Male",
-    description: "Heart broken for 4 times",
+    description: "N/A",
     meetLink: "https://meet.google.com/vtr-tprp-dcc",
   },
   {
     appointmentId: 3,
-    appointmentDate: "28/07/2025",
+    appointmentDate: "14/08/2025",
     appointmentTime: "12:00",
     patientName: "Mriganka Adhikary",
     gender: "Male",
-    description: "Heart broken for 12 times",
+    description: "N/A",
     meetLink: "https://meet.google.com/vtr-tprp-dcc",
   },
   {
     appointmentId: 4,
-    appointmentDate: "29/07/2025",
+    appointmentDate: "14/08/2025",
     appointmentTime: "12:00",
     patientName: "Tousif Mehmood",
     gender: "Male",
-    description: "Heart broken for 2 times",
+    description: "N/A",
     meetLink: "https://meet.google.com/vtr-tprp-dcc",
   },
   {
     appointmentId: 5,
-    appointmentDate: "28/07/2025",
+    appointmentDate: "15/08/2025",
     appointmentTime: "13:00",
-    patientName: "Adhip Halder",
-    gender: "Male",
-    description: "Pain in private area",
+    patientName: "Soumi Ghosh",
+    gender: "Female",
+    description: "N/A",
     meetLink: "https://meet.google.com/vtr-tprp-dcc",
   },
   {
     appointmentId: 6,
-    appointmentDate: "30/07/2025",
+    appointmentDate: "14/08/2025",
     appointmentTime: "11:00",
     patientName: "Sanket Adhikary",
     gender: "Male",
-    description: "All ok just for fun",
+    description: "N/A",
     meetLink: "https://meet.google.com/vtr-tprp-dcc",
   },
   {
     appointmentId: 7,
-    appointmentDate: "31/07/2025",
+    appointmentDate: "15/08/2025",
     appointmentTime: "13:00",
     patientName: "Adhip Halder",
     gender: "Male",
-    description: "",
+    description: "N/A",
     meetLink: "https://meet.google.com/vtr-tprp-dcc",
   },
 ];
@@ -79,6 +79,7 @@ const ViewAppointment = () => {
   );
 
   return (
+
     <div className={style.container}>
       <div className={style.header}>
         <h1 id={style.header}>Appointments</h1>
@@ -114,7 +115,15 @@ const ViewAppointment = () => {
                       <td><p><b>Description : </b>{appt.description || "NA"}</p></td>
                     </tr>
                     <tr>
-                      <td><p><b>Meet Link : </b>{appt.meetLink ? (<a href={appt.meetLink} id={style.link} target="_blank" rel="noopener noreferrer">Join Meeting</a>) : (<span id={style.noLink}>Link not available</span>)}</p></td>
+                      <td>
+                        <p>
+                          <b>Meet Link : </b>{appt.meetLink ? (
+                            <a href={appt.meetLink} id={style.link} target="_blank" rel="noopener noreferrer">Join Meeting</a>
+                            ) : (
+                            <span id={style.noLink}>Link not available</span>
+                            )}
+                        </p>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
