@@ -4,7 +4,7 @@ import style from "./ViewAppointment.module.css";
 const appointments = [
   {
     appointmentId: 1,
-    appointmentDate: "12/08/2025",
+    appointmentDate: "26/08/2025",
     appointmentTime: "11:00",
     patientName: "Adhip Halder",
     gender: "Male",
@@ -13,7 +13,7 @@ const appointments = [
   },
   {
     appointmentId: 3,
-    appointmentDate: "14/08/2025",
+    appointmentDate: "27/08/2025",
     appointmentTime: "12:00",
     patientName: "Mriganka Adhikary",
     gender: "Male",
@@ -22,7 +22,7 @@ const appointments = [
   },
   {
     appointmentId: 4,
-    appointmentDate: "14/08/2025",
+    appointmentDate: "26/08/2025",
     appointmentTime: "12:00",
     patientName: "Tousif Mehmood",
     gender: "Male",
@@ -31,7 +31,7 @@ const appointments = [
   },
   {
     appointmentId: 5,
-    appointmentDate: "15/08/2025",
+    appointmentDate: "26/08/2025",
     appointmentTime: "13:00",
     patientName: "Soumi Ghosh",
     gender: "Female",
@@ -40,7 +40,7 @@ const appointments = [
   },
   {
     appointmentId: 6,
-    appointmentDate: "14/08/2025",
+    appointmentDate: "27/08/2025",
     appointmentTime: "11:00",
     patientName: "Sanket Adhikary",
     gender: "Male",
@@ -49,7 +49,7 @@ const appointments = [
   },
   {
     appointmentId: 7,
-    appointmentDate: "15/08/2025",
+    appointmentDate: "28/08/2025",
     appointmentTime: "13:00",
     patientName: "Adhip Halder",
     gender: "Male",
@@ -99,7 +99,6 @@ const ViewAppointment = () => {
         {filteredAppointments.length > 0 ? (
           filteredAppointments.map((appt) => (
             <div className={style.appointments} key={appt.appointmentId}>
-              <div className={style.appointmentsTable}>
                 <table>
                   <tbody>
                     <tr>
@@ -127,9 +126,8 @@ const ViewAppointment = () => {
                     </tr>
                   </tbody>
                 </table>
-              </div>
               <div>
-                <button className={style.viewDoc}>Documemts</button>
+                <button className={style.viewDoc}>Documents</button>
               </div>
             </div>
           ))

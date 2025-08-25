@@ -68,6 +68,10 @@ const View_Appointmen = () => {
             <div className={style.container}>
                 <div className={style.header}>
                     <h1>My Appointments</h1>
+                    <div className={style.subheader}>
+                        <h2>Upcomming</h2>
+                        <h2>History</h2>
+                    </div>
                 </div>
 
                 <div className={style.appointmentInfo}>

@@ -7,6 +7,7 @@ body{
     /* background-image: url('../assets/ViewAppointmentDoctor.avif'); */
     background-size: cover;
 }
+
 .container{
     width: 1200px;
     height: 600px;
@@ -15,6 +16,7 @@ body{
     align-items: center;
     box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 15px 0 rgba(0, 0, 0, 0.19);
 }
+
 .header {
     width: 90%;
     padding: 20px;
@@ -25,6 +27,7 @@ body{
     border-bottom: 1px solid #1B5E3A;
     background-color: rgb(255, 255, 255);
 }
+
 .header select {
     padding: 8px 12px;
     font-size: 16px;
@@ -44,6 +47,7 @@ body{
 #header{
     margin-left: 300px;
 }
+
 .date{
     width: 20%;
     display: flex;
@@ -51,6 +55,7 @@ body{
     align-items: center;
     text-align: center;
 }
+
 .appointmentInfo{
     width: 90%;
     height: 80%;
@@ -60,16 +65,20 @@ body{
     margin: 20px;
     overflow-y: auto;
 }
+
 .appointmentInfo::-webkit-scrollbar{
     width: 6px;
 }
+
 .appointmentInfo::-webkit-scrollbar-thumb {
     background-color: #6BBF8A;
     border-radius: 10px;
 }
+
 .appointmentInfo::-webkit-scrollbar-track {
     background: transparent;
 }
+
 .appointments{
     width: 90%;
     height: 200px;
@@ -87,9 +96,11 @@ body{
     font-size: 16px;
     font-weight: 550;
 }
+
 #noLink{
     color: rgba(0, 0, 0, 0.518);
 }
+
 .viewDoc {
     background-color: #4B9B6E;
     border: none;
@@ -104,11 +115,12 @@ body{
     margin-right: 50px;
     font-weight: 500;
     border-radius: 5px;
-    
 }
+
 .viewDoc:hover {
     background-color: #2E7D5C;
 }
+
 .noAppointments {
     padding: 25px;
     margin: 20px;
