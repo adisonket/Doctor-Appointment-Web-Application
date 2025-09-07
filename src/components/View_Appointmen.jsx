@@ -1,3 +1,4 @@
+import { useState } from "react";
 import style from "./View_Appointmen.module.css";
 
 const appointments = [
@@ -5,7 +6,7 @@ const appointments = [
         appointmentId: 1,
         drName: "Dr. Ram Pal",
         drRole: "Consultant - Interventional Cardiologist",
-        appointmentDate: "22/08/2025",
+        appointmentDate: "08/09/2025",
         appointmenTime: "11:00",
         paymentStatus: "Done",
         meetLink: "https://meet.google.com/vtr-tprp-dcc",
@@ -14,7 +15,7 @@ const appointments = [
         appointmentId: 2,
         drName: "Dr. Rimita Ghosh",
         drRole: "Consultant - Orthopaedic (Hand & Wrist) Surgeon",
-        appointmentDate: "22/08/2025",
+        appointmentDate: "08/09/2025",
         appointmenTime: "13:00",
         paymentStatus: "Done",
         meetLink: "",
@@ -23,7 +24,7 @@ const appointments = [
         appointmentId: 3,
         drName: "Dr. Shyam Das",
         drRole: "Consultant - Orthopaedic (Hand & Wrist) Surgeon",
-        appointmentDate: "22/07/2025",
+        appointmentDate: "09/09/2025",
         appointmenTime: "13:00",
         paymentStatus: "Done",
         meetLink: "",
@@ -32,7 +33,7 @@ const appointments = [
         appointmentId: 4,
         drName: "Dr. Priya Banerjee",
         drRole: "Consultant - Orthopaedic (Hand & Wrist) Surgeon",
-        appointmentDate: "24/09/2025",
+        appointmentDate: "06/09/2025",
         appointmenTime: "13:00",
         paymentStatus: "Done",
         meetLink: "",
@@ -41,7 +42,7 @@ const appointments = [
         appointmentId: 5,
         drName: "Dr. Ram Ganguly",
         drRole: "Consultant - Orthopaedic (Hand & Wrist) Surgeon",
-        appointmentDate: "22/07/2025",
+        appointmentDate: "05/09/2025",
         appointmenTime: "13:00",
         paymentStatus: "Done",
         meetLink: "",
@@ -49,34 +50,58 @@ const appointments = [
 ];
 
 const View_Appointmen = () => {
+    const [activeTab, setActiveTab] = useState("upcoming");
 
-     const DateTime = (dateStr, timeStr) => {
+    const DateTime = (dateStr, timeStr) => {
         const [day, month, year] = dateStr.split("/").map(Number);
         const [hours, minutes] = timeStr.split(":").map(Number);
         return new Date(year, month - 1, day, hours, minutes);
     };
 
-    const Appointments = appointments.filter(appt => {
+    const now = new Date();
+    const fourDaysLater = new Date();
+    fourDaysLater.setDate(now.getDate() + 4);
+
+    const fourDaysBefore = new Date();
+    fourDaysBefore.setDate(now.getDate() - 4);
+
+    const upcomingAppointments = appointments.filter(appt => {
         const appointmentDateTime = DateTime(appt.appointmentDate, appt.appointmenTime);
-        return appointmentDateTime >= new Date();
+        return appointmentDateTime >= now && appointmentDateTime <= fourDaysLater;
     });
 
+    const historyAppointments = appointments.filter(appt => {
+        const appointmentDateTime = DateTime(appt.appointmentDate, appt.appointmenTime);
+        return appointmentDateTime < now && appointmentDateTime >= fourDaysBefore;
+    });
+
+    const currentAppointments =
+        activeTab === "upcoming" ? upcomingAppointments : historyAppointments;
 
     return (
-
         <div className={style.body}>
             <div className={style.container}>
                 <div className={style.header}>
                     <h1>My Appointments</h1>
                     <div className={style.subheader}>
-                        <h2>Upcomming</h2>
-                        <h2>History</h2>
+                        <h2
+                            className={`${style.tab} ${activeTab === "upcoming" ? style.activeTab : ""}`}
+                            onClick={() => setActiveTab("upcoming")}
+                        >
+                            Upcoming
+                        </h2>
+                        <h2
+                            className={`${style.tab} ${activeTab === "history" ? style.activeTab : ""}`}
+                            onClick={() => setActiveTab("history")}
+                        >
+                            History
+                        </h2>
                     </div>
                 </div>
 
                 <div className={style.appointmentInfo}>
-                    {Appointments.length > 0 ? (
-                        Appointments.map((appt) => (
+                    {currentAppointments.length > 0 ? (
+                        currentAppointments.map((appt) => (
                             <div className={style.appointments} key={appt.appointmentId}>
                                 <table>
                                     <tbody>
@@ -115,9 +140,6 @@ const View_Appointmen = () => {
                     )}
                 </div>
             </div>
-            {/* <div className={style.copyright}>
-                 © {new Date().getFullYear()} Created & crafted by <a  href="https://www.linkedin.com/in/sanket-adhikary-020888253" target="_blank" rel="noopener noreferrer">Sanket Adhikary</a>. All rights reserved.
-            </div> */}
         </div>
     );
 };

@@ -6,8 +6,8 @@ function App() {
 
   return (
     <div className='Body'>
-      {/* <View_Appointmen></View_Appointmen> */}
-      <ViewAppointment></ViewAppointment>
+      <View_Appointmen></View_Appointmen>
+      {/* <ViewAppointment></ViewAppointment> */}
     </div>
   )
 }

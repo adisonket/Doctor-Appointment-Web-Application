@@ -66,6 +66,17 @@
     padding: 10px;
 }
 
+.tab {
+    cursor: pointer;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.activeTab {
+    color: #04AA6D;
+    border-bottom: 3px solid #04AA6D;
+}
+
 table{
     border-spacing: 50px 20px;
 }
